@@ -1,0 +1,169 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: url("https://images.unsplash.com/photo-1518770660439-4636190af475") center/cover no-repeat;
+  color: white;
+}
+
+/* overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  animation: fadeIn 1s;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Upload */
+.upload-box {
+  border: 2px dashed white;
+  padding: 30px;
+  text-align: center;
+  margin: 20px 0;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.upload-box:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.1);
+}
+
+/* textarea */
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: none;
+}
+
+/* Button */
+button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.analyze-btn {
+  background: linear-gradient(45deg,#ff9800,#ff5722);
+}
+
+.analyze-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Loader */
+#loader {
+  text-align: center;
+  margin: 10px;
+  animation: pulse 1s infinite;
+}
+
+/* Card */
+.card {
+  background: rgba(255,255,255,0.2);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  margin-top: 20px;
+}
+
+/* Circle */
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(#ff9800 0%, #ccc 0%);
+}
+
+/* Bars */
+.bar {
+  height: 10px;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.bar div {
+  height: 10px;
+  background: lime;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+/* Keywords */
+#missing span {
+  background: red;
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+/* Canvas */
+canvas {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1;}
+}
+
+@keyframes pulse {
+  50% {opacity:0.5;}
+}
+
+/* DARK MODE */
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+body.dark::before {
+  background: rgba(0,0,0,0.9);
+}
+
+body.dark .card {
+  background: rgba(255,255,255,0.1);
+}
+
+body.dark .upload-box {
+  border-color: #aaa;
+}
+
+body.dark .bar {
+  background: #444;
+}
+
+body.dark textarea {
+  background: #222;
+  color: white;
+}
